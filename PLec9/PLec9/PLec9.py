@@ -86,7 +86,7 @@ keys = list(data.keys())
 for key in keys: 
     data.get(key).sort()
 
-my_list = sorted(data.items(), key=lambda x: x[1])
+my_list = sorted(data.items())
 
 print(my_list)
 
