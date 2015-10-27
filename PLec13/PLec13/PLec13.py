@@ -119,7 +119,6 @@ with urllib.request.urlopen('http://www.naver.com/') as f:
     #print(f.read(1000).decode("utf-8")) #encoding
     
     txt = str(f.read())
-    title_start = re.search("<title>",txt)
-    title_end = re.search("</title_>",txt)
-    title = txt[title_start.end():title_end.start()]
-    print(title)
+    pattern = re.compile("(?<=<title>).+(?=</title>)")
+    title = pattern.search(txt)
+    print(title.group())
