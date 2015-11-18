@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    {%block title%}
+    <title>{{title}} Home</title>
+    {%endblock%}
+</head>
+<body>
+    <h1> Hello! </h1>
+    {%block name%}
+    <h2> Hi!</h2>
+    {%endblock%}
+    {%if name%}
+        <h3> 안뇽 {{name}}</h3>
+    {%else%}
+    <ul>
+        {%for item in items%}
+        <li><a href="{{item.href}}">{{item.caption}}</a></li>
+        {%endfor%}
+    </ul>
+    {%endif%}
+    
+
+</body>
+</html>
